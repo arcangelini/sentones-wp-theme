@@ -1,0 +1,91 @@
+{
+    "version": 2,
+    "title": "Default",
+    "settings": {
+        "color": {
+            "palette": [
+                {
+                    "slug": "primary",
+                    "color": "#0073aa",
+                    "name": "Primary"
+                },
+                {
+                    "slug": "secondary",
+                    "color": "#23282d",
+                    "name": "Secondary"
+                },
+                {
+                    "slug": "accent",
+                    "color": "#00a0d2",
+                    "name": "Accent"
+                },
+                {
+                    "slug": "background",
+                    "color": "#ffffff",
+                    "name": "Background"
+                },
+                {
+                    "slug": "text",
+                    "color": "#333333",
+                    "name": "Text"
+                }
+            ]
+        },
+        "typography": {
+            "fontSizes": [
+                {
+                    "slug": "small",
+                    "size": "14px",
+                    "name": "Small"
+                },
+                {
+                    "slug": "normal",
+                    "size": "16px",
+                    "name": "Normal"
+                },
+                {
+                    "slug": "medium",
+                    "size": "20px",
+                    "name": "Medium"
+                },
+                {
+                    "slug": "large",
+                    "size": "24px",
+                    "name": "Large"
+                },
+                {
+                    "slug": "x-large",
+                    "size": "36px",
+                    "name": "X-Large"
+                }
+            ]
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "var(--wp--preset--color--background)",
+            "text": "var(--wp--preset--color--text)"
+        },
+        "typography": {
+            "fontSize": "var(--wp--preset--font-size--normal)",
+            "lineHeight": "1.6"
+        },
+        "elements": {
+            "link": {
+                "color": {
+                    "text": "var(--wp--preset--color--primary)"
+                }
+            },
+            "h1": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--x-large)"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--large)"
+                }
+            }
+        }
+    }
+} 

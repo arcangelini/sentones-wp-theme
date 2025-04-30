@@ -1,0 +1,37 @@
+<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
+
+<!-- wp:group {"tagName":"main","className":"site-main"} -->
+<main class="wp-block-group site-main">
+    <!-- wp:group {"className":"container"} -->
+    <div class="wp-block-group container">
+        <!-- wp:query {"queryId":1,"query":{"perPage":10,"offset":0,"postType":"post","order":"desc","orderBy":"date","author":"","search":"","sticky":"","inherit":true}} -->
+        <div class="wp-block-query">
+            <!-- wp:post-template {"className":"post-list"} -->
+                <!-- wp:group {"className":"post-item"} -->
+                <div class="wp-block-group post-item">
+                    <!-- wp:post-title {"level":2,"className":"post-title"} /-->
+                    <!-- wp:group {"className":"post-meta"} -->
+                    <div class="wp-block-group post-meta">
+                        <!-- wp:post-date /-->
+                        <!-- wp:post-terms {"term":"category"} /-->
+                    </div>
+                    <!-- /wp:group -->
+                    <!-- wp:post-excerpt {"className":"post-excerpt"} /-->
+                    <!-- wp:read-more {"content":"Read more"} /-->
+                </div>
+                <!-- /wp:group -->
+            <!-- /wp:post-template -->
+
+            <!-- wp:query-pagination {"className":"pagination"} -->
+                <!-- wp:query-pagination-previous /-->
+                <!-- wp:query-pagination-numbers /-->
+                <!-- wp:query-pagination-next /-->
+            <!-- /wp:query-pagination -->
+        </div>
+        <!-- /wp:query -->
+    </div>
+    <!-- /wp:group -->
+</main>
+<!-- /wp:group -->
+
+<!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /--> 
