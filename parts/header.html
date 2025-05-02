@@ -1,16 +1,36 @@
-<!-- wp:group {"className":"container"} -->
-<div class="wp-block-group container">
-    <!-- wp:group {"className":"header-inner"} -->
-    <div class="wp-block-group header-inner">
-        <!-- wp:group {"className":"site-branding"} -->
-        <div class="wp-block-group site-branding">
-            <!-- wp:site-title {"className":"site-title"} /-->
-            <!-- wp:site-tagline {"className":"site-description"} /-->
+<!-- wp:group {"metadata":{"name":"Header"},"align":"full","style":{"spacing":{"padding":{"top":"var:preset|spacing|20","bottom":"var:preset|spacing|20","left":"var(--wp--style--root--padding-left, var(--wp--custom--gap--horizontal))","right":"var(--wp--style--root--padding-right, var(--wp--custom--gap--horizontal))"},"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"constrained","justifyContent":"center"}} -->
+<div class="wp-block-group alignfull" style="
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: var(--wp--preset--spacing--20);
+    padding-right: var(
+      --wp--style--root--padding-right,
+      var(--wp--custom--gap--horizontal)
+    );
+    padding-bottom: var(--wp--preset--spacing--20);
+    padding-left: var(
+      --wp--style--root--padding-left,
+      var(--wp--custom--gap--horizontal)
+    );
+  ">
+    <!-- wp:group {"tagName":"header","metadata":{"name":"Contents"},"align":"wide","style":{"spacing":{"margin":{"top":"0","bottom":"0"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+    <header class="wp-block-group alignwide" style="margin-top: 0; margin-bottom: 0">
+        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group">
+            <!-- wp:group {"metadata":{"name":"Logo \u0026amp; Title"},"style":{"spacing":{"blockGap":"12px"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+            <div class="wp-block-group">
+                <!-- wp:site-logo {"width":250,"align":"center","className":"is-style-default"} /-->
+            </div>
+            <!-- /wp:group -->
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:navigation {"className":"primary-navigation"} /-->
-    </div>
+        <!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|20"}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+        <div class="wp-block-group">
+            <!-- wp:navigation {"ref":4,"className":"order-1 md:order-0"} /-->
+        </div>
+        <!-- /wp:group -->
+    </header>
     <!-- /wp:group -->
 </div>
-<!-- /wp:group --> 
+<!-- /wp:group -->
