@@ -99,33 +99,33 @@
     },
     "styles": {
         "color": {
-            "background": "var(--wp--preset--color--background)",
-            "text": "var(--wp--preset--color--text)"
+            "background": "var:preset|color|background",
+            "text": "var:preset|color|text"
         },
         "typography": {
-            "fontSize": "var(--wp--preset--font-size--normal)",
-            "fontFamily": "var(--wp--preset--font-family--system-font)",
+            "fontSize": "var:preset|font-size|normal",
+            "fontFamily": "var:preset|font-family|system-font",
             "lineHeight": "1.6"
         },
         "elements": {
             "link": {
                 "color": {
-                    "text": "var(--wp--preset--color--primary)"
+                    "text": "var:preset|color|primary"
                 }
             },
             "h1": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--x-large)"
+                    "fontSize": "var:preset|font-size|x-large"
                 }
             },
             "h2": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--large)"
+                    "fontSize": "var:preset|font-size|large"
                 }
             },
             "h3": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--medium)"
+                    "fontSize": "var:preset|font-size|medium"
                 }
             }
         },
@@ -135,19 +135,19 @@
                     "radius": "4px"
                 },
                 "color": {
-                    "background": "var(--wp--preset--color--primary)",
-                    "text": "var(--wp--preset--color--background)"
+                    "background": "var:preset|color|primary",
+                    "text": "var:preset|color|background"
                 }
             },
             "core/navigation": {
                 "typography": {
-                    "fontSize": "var(--wp--preset--font-size--normal)"
+                    "fontSize": "var:preset|font-size|normal"
                 }
             },
             "core/site-title": {
                 "typography": {
                     "fontWeight": "700",
-                    "fontSize": "var(--wp--preset--font-size--large)"
+                    "fontSize": "var:preset|font-size|large"
                 }
             }
         }
