@@ -164,16 +164,11 @@
             "area": "footer"
         }
     ],
-    "customTemplates": [
-        {
-            "name": "blank",
-            "title": "Blank",
-            "postTypes": ["page", "post"]
-        },
-        {
-            "name": "no-title",
-            "title": "No Title",
-            "postTypes": ["page", "post"]
-        }
-    ]
+	"customTemplates": [
+		{
+			"name": "page-no-title",
+			"postTypes": ["page"],
+			"title": "Page No Title"
+		}
+	]
 } 
