@@ -20,12 +20,12 @@
 					"slug": "foreground"
 				},
 				{
-					"color": "#fafafa",
+					"color": "#043249",
 					"name": "Background",
 					"slug": "background"
 				},
 				{
-					"color": "#043249",
+					"color": "#ffffff",
 					"name": "Primary",
 					"slug": "primary"
 				},
@@ -545,7 +545,7 @@
 			}
 		},
 		"color": {
-			"background": "var(--wp--preset--color--white)",
+			"background": "var(--wp--preset--color--background)",
 			"text": "var(--wp--preset--color--primary)"
 		},
 		"elements": {
