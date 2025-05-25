@@ -15,7 +15,7 @@
 			],
 			"palette": [
 				{
-					"color": "#d7ae75",
+					"color": "#ffffff",
 					"name": "Foreground",
 					"slug": "foreground"
 				},
@@ -25,7 +25,7 @@
 					"slug": "background"
 				},
 				{
-					"color": "#ffffff",
+					"color": "#D7AE75",
 					"name": "Primary",
 					"slug": "primary"
 				},
