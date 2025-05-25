@@ -26,12 +26,11 @@ A custom WordPress block theme designed for WordPress.com sites, following the T
 ```
 sentones-wp-theme/
 ├── assets/
-│   ├── css/           - CSS files
+│   ├── font/          - Font files
 │   ├── js/            - JavaScript files
 │   └── images/        - Theme images
 ├── parts/             - Template parts (header, footer, etc.)
 ├── patterns/          - Block patterns
-├── styles/            - Global style variations
 ├── templates/         - Block templates
 ├── functions.php      - Theme functions
 ├── index.php          - Fallback template

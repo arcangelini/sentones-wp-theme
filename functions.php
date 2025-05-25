@@ -85,4 +85,71 @@ function sent_ones_wp_register_block_styles() {
         );
     }
 }
-add_action( 'init', 'sent_ones_wp_register_block_styles' ); 
+add_action( 'init', 'sent_ones_wp_register_block_styles' );
+
+/**
+ * Register Podcast post type.
+ */
+function sent_ones_wp_register_post_types() {
+    $labels = array(
+        'name'                 => _x( 'Podcasts', 'Post type general name', 'sent-ones-wp' ),
+        'singular_name'        => _x( 'Podcast', 'Post type singular name', 'sent-ones-wp' ),
+        'menu_name'            => _x( 'Podcasts', 'Admin Menu text', 'sent-ones-wp' ),
+        'add_new'              => __( 'Add New', 'sent-ones-wp' ),
+        'add_new_item'         => __( 'Add New Podcast', 'sent-ones-wp' ),
+        'edit_item'            => __( 'Edit Podcast', 'sent-ones-wp' ),
+        'new_item'             => __( 'New Podcast', 'sent-ones-wp' ),
+        'view_item'            => __( 'View Podcast', 'sent-ones-wp' ),
+        'search_items'         => __( 'Search Podcasts', 'sent-ones-wp' ),
+        'not_found'            => __( 'No podcasts found', 'sent-ones-wp' ),
+        'not_found_in_trash'   => __( 'No podcasts found in Trash', 'sent-ones-wp' ),
+    );
+
+    $args = array(
+        'labels'               => $labels,
+        'public'               => true,
+        'publicly_queryable'   => true,
+        'show_ui'              => true,
+        'show_in_menu'         => true,
+        'query_var'            => true,
+        'rewrite'              => array( 
+            'slug'       => 'podcast',
+            'with_front' => true,
+            'pages'      => true,
+            'feeds'      => true,
+        ),
+        'capability_type'      => array('podcast', 'podcasts'),
+        'map_meta_cap'         => true,
+        'has_archive'          => true,
+        'hierarchical'         => false,
+        'menu_position'        => null,
+        'menu_icon'            => 'dashicons-microphone',
+        'supports'             => array( 
+            'title',
+            'editor',
+            'author',
+            'thumbnail',
+            'excerpt',
+            'custom-fields',
+            'revisions',
+            'page-attributes',
+            'post-formats',
+            'template',
+        ),
+        'show_in_rest'          => true,
+        'rest_base'             => 'podcasts',
+        'rest_controller_class' => 'WP_REST_Posts_Controller',
+        'template'              => array(),
+        'template_lock'         => false,
+        'show_in_graphql'       => true,
+    );
+
+    register_post_type( 'podcast', $args );
+
+    // Flush rewrite rules only once
+    if ( ! get_option( 'sent_ones_wp_flush_rewrite_rules' ) ) {
+        flush_rewrite_rules( false );
+        update_option( 'sent_ones_wp_flush_rewrite_rules', true );
+    }
+}
+add_action( 'init', 'sent_ones_wp_register_post_types' ); 
