@@ -243,6 +243,7 @@ function sent_ones_wp_admin_filter_query( $query ) {
         $query->set( 'tax_query', array(
             array(
                 'taxonomy' => 'podcast_channel',
+                'field'    => 'term_id',
                 'operator' => 'NOT EXISTS',
             ),
         ) );
