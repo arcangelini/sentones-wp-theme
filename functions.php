@@ -167,7 +167,6 @@ function sent_ones_wp_register_post_types() {
         'supports'             => array( 
             'title',
             'editor',
-            'author',
             'thumbnail',
             'excerpt',
             'custom-fields',
@@ -190,4 +189,36 @@ function sent_ones_wp_register_post_types() {
     // Force flush rewrite rules on theme activation
     flush_rewrite_rules( false );
 }
-add_action( 'init', 'sent_ones_wp_register_post_types' ); 
+add_action( 'init', 'sent_ones_wp_register_post_types' );
+
+/**
+ * Make podcast_channel taxonomy column sortable.
+ */
+function sent_ones_wp_sortable_columns( $columns ) {
+    $columns['taxonomy-podcast_channel'] = 'podcast_channel';
+    return $columns;
+}
+add_filter( 'manage_edit-podcast_sortable_columns', 'sent_ones_wp_sortable_columns' );
+
+/**
+ * Add filter dropdown for podcast_channel taxonomy in admin.
+ */
+function sent_ones_wp_admin_filter_dropdown() {
+    global $typenow;
+    
+    if ( $typenow === 'podcast' ) {
+        $selected = isset( $_GET['podcast_channel'] ) ? $_GET['podcast_channel'] : '';
+        
+        wp_dropdown_categories( array(
+            'show_option_all' => __( 'All Channels', 'sent-ones-wp' ),
+            'taxonomy'        => 'podcast_channel',
+            'name'            => 'podcast_channel',
+            'orderby'         => 'name',
+            'selected'        => $selected,
+            'show_count'      => true,
+            'hide_empty'      => true,
+            'value_field'     => 'slug',
+        ) );
+    }
+}
+add_action( 'restrict_manage_posts', 'sent_ones_wp_admin_filter_dropdown' ); 
