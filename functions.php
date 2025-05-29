@@ -121,7 +121,7 @@ function sent_ones_wp_register_post_types() {
         'capability_type'      => 'post',
         'has_archive'          => true,
         'hierarchical'         => false,
-        'menu_position'        => null,
+        'menu_position'        => 5,
         'menu_icon'            => 'dashicons-microphone',
         'supports'             => array( 
             'title',
@@ -135,6 +135,7 @@ function sent_ones_wp_register_post_types() {
             'post-formats',
             'template',
         ),
+        'taxonomies'            => array( 'category', 'post_tag' ),
         'show_in_rest'          => true,
         'rest_base'             => 'podcasts',
         'rest_controller_class' => 'WP_REST_Posts_Controller',
