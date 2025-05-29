@@ -118,8 +118,7 @@ function sent_ones_wp_register_post_types() {
             'pages'      => true,
             'feeds'      => true,
         ),
-        'capability_type'      => array('podcast', 'podcasts'),
-        'map_meta_cap'         => true,
+        'capability_type'      => 'post',
         'has_archive'          => true,
         'hierarchical'         => false,
         'menu_position'        => null,
@@ -146,10 +145,7 @@ function sent_ones_wp_register_post_types() {
 
     register_post_type( 'podcast', $args );
 
-    // Flush rewrite rules only once
-    if ( ! get_option( 'sent_ones_wp_flush_rewrite_rules' ) ) {
-        flush_rewrite_rules( false );
-        update_option( 'sent_ones_wp_flush_rewrite_rules', true );
-    }
+    // Force flush rewrite rules on theme activation
+    flush_rewrite_rules( false );
 }
 add_action( 'init', 'sent_ones_wp_register_post_types' ); 
