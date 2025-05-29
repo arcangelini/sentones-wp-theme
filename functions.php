@@ -211,7 +211,6 @@ function sent_ones_wp_admin_filter_dropdown() {
         
         echo '<select name="podcast_channel" id="dropdown_podcast_channel">';
         echo '<option value="">' . __( 'All Channels', 'sent-ones-wp' ) . '</option>';
-        echo '<option value="no_channel"' . selected( $selected, 'no_channel', false ) . '>' . __( 'No Channel Set', 'sent-ones-wp' ) . '</option>';
         
         $terms = get_terms( array(
             'taxonomy'   => 'podcast_channel',
@@ -231,22 +230,3 @@ function sent_ones_wp_admin_filter_dropdown() {
     }
 }
 add_action( 'restrict_manage_posts', 'sent_ones_wp_admin_filter_dropdown' );
-
-/**
- * Modify the query to handle 'No Channel Set' filter.
- */
-function sent_ones_wp_admin_filter_query( $query ) {
-    global $pagenow, $typenow;
-    
-    if ( $pagenow === 'edit.php' && $typenow === 'podcast' && isset( $_GET['podcast_channel'] ) && $_GET['podcast_channel'] === 'no_channel' ) {
-        // Only filter by taxonomy - podcasts with no channel taxonomy terms assigned
-        $query->set( 'tax_query', array(
-            array(
-                'taxonomy' => 'podcast_channel',
-                'field'    => 'term_id',
-                'operator' => 'NOT EXISTS',
-            ),
-        ) );
-    }
-}
-add_action( 'pre_get_posts', 'sent_ones_wp_admin_filter_query' ); 
