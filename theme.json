@@ -105,7 +105,7 @@
 						{
 							"fontFamily": "Bebas Neue",
 							"fontStyle": "normal",
-							"fontWeight": "300",
+							"fontWeight": "100 900",
 							"src": [
 								"file:./assets/fonts/bebas-neue/bebas-neue_normal.ttf"
 							]
@@ -114,6 +114,29 @@
 					"fontFamily": "Bebas Neue",
 					"name": "Bebas Neue",
 					"slug": "bebas-neue"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Open Sans",
+							"fontStyle": "normal",
+							"fontWeight": "100 900",
+							"src": [
+								"file:./assets/fonts/open-sans/open-sans_normal.ttf"
+							]
+						},
+						{
+							"fontFamily": "Open Sans",
+							"fontStyle": "italic",
+							"fontWeight": "100 900",
+							"src": [
+								"file:./assets/fonts/open-sans/open-sans_italic.ttf"
+							]
+						}
+					],
+					"fontFamily": "Open Sans",
+					"name": "Open Sans",
+					"slug": "open-sans"
 				}
 			],
 			"fontSizes": [
@@ -652,7 +675,7 @@
 			}
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--bebas-neue)",
+			"fontFamily": "var(--wp--preset--font-family--open-sans)",
 			"fontSize": "var(--wp--preset--font-size--small)",
 			"fontStyle": "normal",
 			"lineHeight": "1.5"
