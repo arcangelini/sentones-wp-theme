@@ -209,16 +209,56 @@ function sent_ones_wp_admin_filter_dropdown() {
     if ( $typenow === 'podcast' ) {
         $selected = isset( $_GET['podcast_channel'] ) ? $_GET['podcast_channel'] : '';
         
-        wp_dropdown_categories( array(
-            'show_option_all' => __( 'All Channels', 'sent-ones-wp' ),
-            'taxonomy'        => 'podcast_channel',
-            'name'            => 'podcast_channel',
-            'orderby'         => 'name',
-            'selected'        => $selected,
-            'show_count'      => true,
-            'hide_empty'      => true,
-            'value_field'     => 'slug',
+        echo '<select name="podcast_channel" id="dropdown_podcast_channel">';
+        echo '<option value="">' . __( 'All Channels', 'sent-ones-wp' ) . '</option>';
+        echo '<option value="no_channel"' . selected( $selected, 'no_channel', false ) . '>' . __( 'No Channel Set', 'sent-ones-wp' ) . '</option>';
+        
+        $terms = get_terms( array(
+            'taxonomy'   => 'podcast_channel',
+            'hide_empty' => true,
+            'orderby'    => 'name',
+        ) );
+        
+        if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
+            foreach ( $terms as $term ) {
+                echo '<option value="' . esc_attr( $term->slug ) . '"' . selected( $selected, $term->slug, false ) . '>';
+                echo esc_html( $term->name ) . ' (' . $term->count . ')';
+                echo '</option>';
+            }
+        }
+        
+        echo '</select>';
+    }
+}
+add_action( 'restrict_manage_posts', 'sent_ones_wp_admin_filter_dropdown' );
+
+/**
+ * Modify the query to handle 'No Channel Set' filter.
+ */
+function sent_ones_wp_admin_filter_query( $query ) {
+    global $pagenow, $typenow;
+    
+    if ( $pagenow === 'edit.php' && $typenow === 'podcast' && isset( $_GET['podcast_channel'] ) && $_GET['podcast_channel'] === 'no_channel' ) {
+        $query->set( 'meta_query', array(
+            'relation' => 'OR',
+            array(
+                'key'     => 'podcast_channel',
+                'compare' => 'NOT EXISTS',
+            ),
+            array(
+                'key'     => 'podcast_channel',
+                'value'   => '',
+                'compare' => '=',
+            ),
+        ) );
+        
+        // Also ensure no taxonomy terms are assigned
+        $query->set( 'tax_query', array(
+            array(
+                'taxonomy' => 'podcast_channel',
+                'operator' => 'NOT EXISTS',
+            ),
         ) );
     }
 }
-add_action( 'restrict_manage_posts', 'sent_ones_wp_admin_filter_dropdown' ); 
+add_action( 'pre_get_posts', 'sent_ones_wp_admin_filter_query' ); 
