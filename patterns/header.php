@@ -5,14 +5,12 @@
  * Inserter: no
  */
 ?>
-<!-- wp:group {"style":{"spacing":{"padding":{"top":"var:preset|spacing|60","bottom":"var:preset|spacing|60"}},"border":{"bottom":{"color":"var:preset|color|secondary","width":"1px"},"top":[],"right":[],"left":[]}},"layout":{"type":"constrained","contentSize":""}} -->
-<div class="wp-block-group" style="border-bottom-color:var(--wp--preset--color--secondary);border-bottom-width:1px;padding-top:var(--wp--preset--spacing--60);padding-bottom:var(--wp--preset--spacing--60)"><!-- wp:group {"metadata":{"name":"Header wrapper"},"align":"wide","layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
-<div class="wp-block-group alignwide"><!-- wp:group {"style":{"spacing":{"blockGap":"var:preset|spacing|40"},"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"left"}} -->
-<div class="wp-block-group"><!-- wp:site-title /-->
+<!-- wp:group {"align":"full","layout":{"type":"constrained"}} -->
+<div class="wp-block-group alignfull"><!-- wp:group {"metadata":{"name":"Header wrapper"},"align":"wide","style":{"spacing":{"padding":{"top":"var:preset|spacing|40","bottom":"var:preset|spacing|40"}}},"layout":{"type":"flex","flexWrap":"nowrap","justifyContent":"space-between"}} -->
+<div class="wp-block-group alignwide is-layout-flex wp-block-group-is-layout-flex" style="padding-top:var(--wp--preset--spacing--40);padding-bottom:var(--wp--preset--spacing--40)">
 
-<!-- wp:site-tagline /--></div>
-<!-- /wp:group -->
+<div class="wp-sent-ones-logo"><a rel="home" title="Sent Ones" href="https://sentones.com"><?php echo file_get_contents( esc_url( get_template_directory_uri() . '/assets/images/logo.svg' ) ); ?></a></div>
 
-<!-- wp:navigation {"style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","justifyContent":"right"}} /--></div>
+<!-- wp:navigation {"ref":4,"style":{"layout":{"selfStretch":"fill","flexSize":null}},"layout":{"type":"flex","justifyContent":"right"}} /--></div>
 <!-- /wp:group --></div>
 <!-- /wp:group -->
