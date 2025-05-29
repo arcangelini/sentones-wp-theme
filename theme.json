@@ -15,17 +15,17 @@
 			],
 			"palette": [
 				{
-					"color": "#ffffff",
+					"color": "#d7ae75",
 					"name": "Foreground",
 					"slug": "foreground"
 				},
 				{
-					"color": "#043249",
+					"color": "#fafafa",
 					"name": "Background",
 					"slug": "background"
 				},
 				{
-					"color": "#D7AE75",
+					"color": "#043249",
 					"name": "Primary",
 					"slug": "primary"
 				},
@@ -655,7 +655,6 @@
 			"fontFamily": "var(--wp--preset--font-family--bebas-neue)",
 			"fontSize": "var(--wp--preset--font-size--small)",
 			"fontStyle": "normal",
-			"fontWeight": "400",
 			"lineHeight": "1.5"
 		}
 	},
