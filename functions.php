@@ -239,20 +239,7 @@ function sent_ones_wp_admin_filter_query( $query ) {
     global $pagenow, $typenow;
     
     if ( $pagenow === 'edit.php' && $typenow === 'podcast' && isset( $_GET['podcast_channel'] ) && $_GET['podcast_channel'] === 'no_channel' ) {
-        $query->set( 'meta_query', array(
-            'relation' => 'OR',
-            array(
-                'key'     => 'podcast_channel',
-                'compare' => 'NOT EXISTS',
-            ),
-            array(
-                'key'     => 'podcast_channel',
-                'value'   => '',
-                'compare' => '=',
-            ),
-        ) );
-        
-        // Also ensure no taxonomy terms are assigned
+        // Only filter by taxonomy - podcasts with no channel taxonomy terms assigned
         $query->set( 'tax_query', array(
             array(
                 'taxonomy' => 'podcast_channel',
