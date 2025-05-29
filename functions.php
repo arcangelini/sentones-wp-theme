@@ -88,6 +88,47 @@ function sent_ones_wp_register_block_styles() {
 add_action( 'init', 'sent_ones_wp_register_block_styles' );
 
 /**
+ * Register Podcast Channels taxonomy.
+ */
+function sent_ones_wp_register_taxonomies() {
+    $labels = array(
+        'name'                       => _x( 'Podcast Channels', 'Taxonomy general name', 'sent-ones-wp' ),
+        'singular_name'              => _x( 'Podcast Channel', 'Taxonomy singular name', 'sent-ones-wp' ),
+        'search_items'               => __( 'Search Channels', 'sent-ones-wp' ),
+        'popular_items'              => __( 'Popular Channels', 'sent-ones-wp' ),
+        'all_items'                  => __( 'All Channels', 'sent-ones-wp' ),
+        'parent_item'                => null,
+        'parent_item_colon'          => null,
+        'edit_item'                  => __( 'Edit Channel', 'sent-ones-wp' ),
+        'update_item'                => __( 'Update Channel', 'sent-ones-wp' ),
+        'add_new_item'               => __( 'Add New Channel', 'sent-ones-wp' ),
+        'new_item_name'              => __( 'New Channel Name', 'sent-ones-wp' ),
+        'separate_items_with_commas' => __( 'Separate channels with commas', 'sent-ones-wp' ),
+        'add_or_remove_items'        => __( 'Add or remove channels', 'sent-ones-wp' ),
+        'choose_from_most_used'      => __( 'Choose from the most used channels', 'sent-ones-wp' ),
+        'not_found'                  => __( 'No channels found.', 'sent-ones-wp' ),
+        'menu_name'                  => __( 'Channels', 'sent-ones-wp' ),
+    );
+
+    $args = array(
+        'hierarchical'        => false,
+        'labels'              => $labels,
+        'show_ui'             => true,
+        'show_admin_column'   => true,
+        'query_var'           => true,
+        'rewrite'             => array( 'slug' => 'podcast-channel' ),
+        'show_in_rest'        => true,
+        'rest_base'           => 'podcast-channels',
+        'show_in_graphql'     => true,
+        'graphql_single_name' => 'podcastChannel',
+        'graphql_plural_name' => 'podcastChannels',
+    );
+
+    register_taxonomy( 'podcast_channel', array( 'podcast' ), $args );
+}
+add_action( 'init', 'sent_ones_wp_register_taxonomies' );
+
+/**
  * Register Podcast post type.
  */
 function sent_ones_wp_register_post_types() {
@@ -135,7 +176,7 @@ function sent_ones_wp_register_post_types() {
             'post-formats',
             'template',
         ),
-        'taxonomies'            => array( 'category', 'post_tag' ),
+        'taxonomies'            => array( 'podcast_channel', 'post_tag' ),
         'show_in_rest'          => true,
         'rest_base'             => 'podcasts',
         'rest_controller_class' => 'WP_REST_Posts_Controller',
