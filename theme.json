@@ -139,45 +139,36 @@
 					"slug": "large",
 					"size": "1.125rem",
 					"name": "Large",
-					"fluid": {
-						"min": "1rem",
-						"max": "1.125rem"
-					}
+					"fluid": false
 				},
 				{
 					"slug": "x-large",
 					"size": "1.25rem",
 					"name": "Extra Large",
-					"fluid": {
-						"min": "1.125rem",
-						"max": "1.25rem"
-					}
+					"fluid": false
 				},
 				{
 					"slug": "xx-large",
-					"size": "1.5rem",
+					"size": "1.375rem",
 					"name": "2X Large",
-					"fluid": {
-						"min": "1.25rem",
-						"max": "1.5rem"
-					}
+					"fluid": false
 				},
 				{
 					"slug": "xxx-large",
-					"size": "2rem",
+					"size": "1.75rem",
 					"name": "3X Large",
 					"fluid": {
 						"min": "1.5rem",
-						"max": "2rem"
+						"max": "1.75rem"
 					}
 				},
 				{
 					"slug": "xxxx-large",
-					"size": "2.5rem",
+					"size": "2.25rem",
 					"name": "4X Large",
 					"fluid": {
-						"min": "2rem",
-						"max": "2.5rem"
+						"min": "1.875rem",
+						"max": "2.25rem"
 					}
 				},
 				{
@@ -200,11 +191,11 @@
 				},
 				{
 					"slug": "colossal",
-					"size": "4rem",
+					"size": "4.5rem",
 					"name": "Colossal",
 					"fluid": {
 						"min": "3.5rem",
-						"max": "4rem"
+						"max": "4.5rem"
 					}
 				}
 			],
@@ -414,7 +405,7 @@
 			},
 			"h2": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--huge)",
+					"fontSize": "var(--wp--preset--font-size--xxxx-large)",
 					"fontWeight": "600",
 					"lineHeight": "1.2",
 					"letterSpacing": "-0.01em"
@@ -443,7 +434,7 @@
 			},
 			"h6": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--large)",
+					"fontSize": "var(--wp--preset--font-size--medium)",
 					"fontWeight": "600",
 					"lineHeight": "1.5",
 					"textTransform": "uppercase",
@@ -487,7 +478,7 @@
 			},
 			"core/post-title": {
 				"typography": {
-					"fontSize": "var(--wp--preset--font-size--xxxx-large)",
+					"fontSize": "var(--wp--preset--font-size--huge)",
 					"fontWeight": "700",
 					"lineHeight": "1.1"
 				}
