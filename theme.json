@@ -102,8 +102,7 @@
 			]
 		},
 		"typography": {
-			"fluid": true,
-			"dropCap": false,
+			"defaultFontSizes": false,
 			"fontFamilies": [
 				{
 					"fontFamily": "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', 'Inter', system-ui, sans-serif",
@@ -198,15 +197,7 @@
 						"max": "4.5rem"
 					}
 				}
-			],
-			"customFontSize": true,
-			"fontStyle": true,
-			"fontWeight": true,
-			"letterSpacing": true,
-			"lineHeight": true,
-			"textDecoration": true,
-			"textTransform": true,
-			"writingMode": true
+			]
 		},
 		"spacing": {
 			"blockGap": true,
