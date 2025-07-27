@@ -110,9 +110,42 @@
 					"name": "System Sans"
 				},
 				{
-					"fontFamily": "'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace",
-					"slug": "monospace",
-					"name": "Monospace"
+					"fontFamily": "\"Montserrat\", sans-serif",
+					"name": "Montserrat",
+					"slug": "montserrat",
+					"fontFace": [
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "100 900",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/montserrat/montserrat.ttf"
+							]
+						},
+						{
+							"fontFamily": "Montserrat",
+							"fontWeight": "100 900",
+							"fontStyle": "italic",
+							"src": [
+								"file:./assets/fonts/montserrat/montserrat_italic.ttf"
+							]
+						}
+					]
+				},
+				{
+					"fontFamily": "\"Covered By Your Grace\", cursive",
+					"name": "Covered By Your Grace",
+					"slug": "covered-by-your-grace",
+					"fontFace": [
+						{
+							"fontFamily": "Covered By Your Grace",
+							"fontWeight": "400",
+							"fontStyle": "normal",
+							"src": [
+								"file:./assets/fonts/covered-by-your-grace/covered-by-your-grace.ttf"
+							]
+						}
+					]
 				}
 			],
 			"fontSizes": [
@@ -350,7 +383,7 @@
 			"text": "var(--wp--preset--color--primary-black)"
 		},
 		"typography": {
-			"fontFamily": "var(--wp--preset--font-family--system-sans)",
+			"fontFamily": "var(--wp--preset--font-family--montserrat)",
 			"fontSize": "var(--wp--preset--font-size--medium)",
 			"lineHeight": "1.6"
 		},
@@ -465,6 +498,8 @@
 				"elements": {
 					"h2": {
 						"typography": {
+							"fontFamily": "var(--wp--preset--font-family--covered-by-your-grace)",
+							"fontWeight": "700",
 							"textTransform": "uppercase"
 						}
 					}
