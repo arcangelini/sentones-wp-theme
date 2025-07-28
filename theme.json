@@ -139,7 +139,7 @@
 					"fontFace": [
 						{
 							"fontFamily": "Covered By Your Grace",
-							"fontWeight": "400 700",
+							"fontWeight": "400",
 							"fontStyle": "normal",
 							"src": [
 								"file:./assets/fonts/covered-by-your-grace/covered-by-your-grace.woff2"
