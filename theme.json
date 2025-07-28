@@ -133,19 +133,17 @@
 					]
 				},
 				{
-					"fontFamily": "\"Covered By Your Grace\", cursive",
-					"name": "Covered By Your Grace",
-					"slug": "covered-by-your-grace",
 					"fontFace": [
 						{
 							"fontFamily": "Covered By Your Grace",
 							"fontWeight": "400",
 							"fontStyle": "normal",
-							"src": [
-								"file:./assets/fonts/covered-by-your-grace/covered-by-your-grace.woff2"
-							]
+							"src": "file:./assets/fonts/covered-by-your-grace/covered-by-your-grace.woff2"
 						}
-					]
+					],
+					"fontFamily": "\"Covered By Your Grace\", cursive",
+					"name": "Covered By Your Grace",
+					"slug": "covered-by-your-grace"
 				}
 			],
 			"fontSizes": [
