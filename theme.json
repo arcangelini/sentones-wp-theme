@@ -110,7 +110,7 @@
 					"name": "System Sans"
 				},
 				{
-					"fontFamily": "Montserrat, sans-serif",
+					"fontFamily": "\"Montserrat\", sans-serif",
 					"name": "Montserrat",
 					"slug": "montserrat",
 					"fontFace": [
@@ -133,13 +133,14 @@
 					]
 				},
 				{
-					"fontFamily": "Covered",
-					"name": "Covered",
+					"fontFamily": "\"Covered By Your Grace\", cursive",
+					"name": "Covered By Your Grace",
 					"slug": "covered-by-your-grace",
 					"fontFace": [
 						{
-							"fontFamily": "Covered",
+							"fontFamily": "Covered By Your Grace",
 							"fontWeight": "400",
+							"fontStyle": "normal",
 							"src": [
 								"file:./assets/fonts/covered-by-your-grace/covered-by-your-grace.woff2"
 							]
