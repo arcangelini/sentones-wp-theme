@@ -119,7 +119,7 @@
 							"fontWeight": "100 900",
 							"fontStyle": "normal",
 							"src": [
-								"file:./assets/fonts/montserrat/montserrat.ttf"
+								"file:./assets/fonts/montserrat/montserrat.woof2"
 							]
 						},
 						{
@@ -127,7 +127,7 @@
 							"fontWeight": "100 900",
 							"fontStyle": "italic",
 							"src": [
-								"file:./assets/fonts/montserrat/montserrat_italic.ttf"
+								"file:./assets/fonts/montserrat/montserrat_italic.woff2"
 							]
 						}
 					]
@@ -139,10 +139,10 @@
 					"fontFace": [
 						{
 							"fontFamily": "Covered By Your Grace",
-							"fontWeight": "400",
+							"fontWeight": "400 700",
 							"fontStyle": "normal",
 							"src": [
-								"file:./assets/fonts/covered-by-your-grace/covered-by-your-grace.ttf"
+								"file:./assets/fonts/covered-by-your-grace/covered-by-your-grace.woff2"
 							]
 						}
 					]
