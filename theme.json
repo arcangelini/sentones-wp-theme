@@ -103,6 +103,43 @@
 		},
 		"typography": {
 			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+					"name": "System Font",
+					"slug": "system-font"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Montserrat",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/montserrat/montserrat.woff2"
+							]
+						}
+					],
+					"fontFamily": "Montserrat, sans-serif",
+					"name": "Montserrat",
+					"slug": "montserrat"
+				},
+				{
+					"fontFace": [
+						{
+							"fontFamily": "Covered by Your Grace",
+							"fontStyle": "normal",
+							"fontWeight": "400",
+							"src": [
+								"file:./assets/fonts/covered-by-your-grace/covered-by-your-grace.woff2"
+							]
+						}
+					],
+					"fontFamily": "Covered by Your Grace, cursive",
+					"name": "Covered by Your Grace",
+					"slug": "covered-by-your-grace"
+				}
+			],
 			"fontSizes": [
 				{
 					"slug": "x-small",
