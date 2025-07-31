@@ -7,18 +7,31 @@
  */
 
 if ( ! function_exists( 'sent_ones_wp_setup' ) ) {
-    /**
-     * Sets up theme defaults and registers support for various WordPress features.
-     */
-    function sent_ones_wp_setup() {
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * @return void
+	 */
+	function sent_ones_wp_setup() {
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+		
+		// Add support for font appearance tools
+		add_theme_support( 'appearance-tools' );
+		
+		// Add support for custom units
+		add_theme_support( 'custom-units' );
+		
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
-    }
+	}
 }
 add_action( 'after_setup_theme', 'sent_ones_wp_setup' );
 
 /**
  * Enqueue theme stylesheets.
+ *
+ * @return void
  */
 function sent_ones_wp_styles() {
 		// Register theme stylesheet.
@@ -32,6 +45,25 @@ function sent_ones_wp_styles() {
 		// Enqueue theme stylesheet.
 		wp_enqueue_style( 'sent-ones-wp-style' );
 
+		// Add inline styles for fonts to ensure they load on the front end
+		$font_css = '
+		@font-face {
+			font-family: "Montserrat";
+			font-style: normal;
+			font-weight: 400;
+			src: url(' . get_theme_file_uri( 'assets/fonts/montserrat/montserrat.woff2' ) . ') format("woff2");
+			font-display: swap;
+		}
+		@font-face {
+			font-family: "Covered by Your Grace";
+			font-style: normal;
+			font-weight: 400;
+			src: url(' . get_theme_file_uri( 'assets/fonts/covered-by-your-grace/covered-by-your-grace.woff2' ) . ') format("woff2");
+			font-display: swap;
+		}
+		';
+		
+		wp_add_inline_style( 'sent-ones-wp-style', $font_css );
 }
 add_action( 'wp_enqueue_scripts', 'sent_ones_wp_styles' );
 
