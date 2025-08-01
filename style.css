@@ -23,3 +23,7 @@ p {
 .wp-block-group.post-sharing-buttons {
     top: calc(85px + var(--wp-admin--admin-bar--position-offset, 85px));
 }
+
+.wp-block-navigation__responsive-close {
+    padding: 30px;
+}
