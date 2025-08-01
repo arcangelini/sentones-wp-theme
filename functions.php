@@ -62,7 +62,7 @@ function sent_ones_wp_styles() {
 			font-display: swap;
 		}
 		';
-		
+
 		wp_add_inline_style( 'sent-ones-wp-style', $font_css );
 }
 add_action( 'wp_enqueue_scripts', 'sent_ones_wp_styles' );
