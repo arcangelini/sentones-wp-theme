@@ -15,6 +15,11 @@ Text Domain: sent-ones-wp
 h1, h2, h3, h4, h5, h6, blockquote, caption, figcaption {
     text-wrap: balance;
 }
+
 p {
     text-wrap: pretty;
+}
+
+.wp-block-group.post-sharing-buttons {
+    top: calc(85px + var(--wp-admin--admin-bar--position-offset, 85px));
 }
