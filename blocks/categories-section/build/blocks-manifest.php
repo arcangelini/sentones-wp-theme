@@ -1,0 +1,25 @@
+<?php
+// This file is generated. Do not modify it manually.
+return array(
+	'categories-section' => array(
+		'$schema' => 'https://schemas.wp.org/trunk/block.json',
+		'apiVersion' => 3,
+		'name' => 'create-block/categories-section',
+		'version' => '0.1.0',
+		'title' => 'Categories Section',
+		'category' => 'widgets',
+		'icon' => 'smiley',
+		'description' => 'Example block scaffolded with Create Block tool.',
+		'example' => array(
+			
+		),
+		'supports' => array(
+			'html' => false
+		),
+		'textdomain' => 'categories-section',
+		'editorScript' => 'file:./index.js',
+		'editorStyle' => 'file:./index.css',
+		'style' => 'file:./style-index.css',
+		'viewScript' => 'file:./view.js'
+	)
+);

@@ -68,6 +68,45 @@ function sent_ones_wp_styles() {
 add_action( 'wp_enqueue_scripts', 'sent_ones_wp_styles' );
 
 /**
+ * Register custom blocks
+ */
+function sent_ones_wp_register_blocks() {
+	$blocks_dir = get_template_directory() . '/blocks/categories-section/build';
+	
+	if ( ! file_exists( $blocks_dir ) ) {
+		return;
+	}
+	
+	/**
+	 * Registers the block(s) metadata from the `blocks-manifest.php` and registers the block type(s)
+	 * based on the registered block metadata.
+	 */
+	if ( function_exists( 'wp_register_block_types_from_metadata_collection' ) ) {
+		wp_register_block_types_from_metadata_collection( $blocks_dir, $blocks_dir . '/blocks-manifest.php' );
+		return;
+	}
+
+	/**
+	 * Registers the block(s) metadata from the `blocks-manifest.php` file.
+	 */
+	if ( function_exists( 'wp_register_block_metadata_collection' ) ) {
+		wp_register_block_metadata_collection( $blocks_dir, $blocks_dir . '/blocks-manifest.php' );
+	}
+	
+	/**
+	 * Registers the block type(s) in the `blocks-manifest.php` file.
+	 */
+	$manifest_file = $blocks_dir . '/blocks-manifest.php';
+	if ( file_exists( $manifest_file ) ) {
+		$manifest_data = require $manifest_file;
+		foreach ( array_keys( $manifest_data ) as $block_type ) {
+			register_block_type( $blocks_dir . "/{$block_type}" );
+		}
+	}
+}
+add_action( 'init', 'sent_ones_wp_register_blocks' );
+
+/**
  * Add Podcasting post type
  */
 require_once get_template_directory() . '/podcasts.php';
