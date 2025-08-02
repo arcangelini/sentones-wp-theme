@@ -15,8 +15,8 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - run: npm install
-      - run: npm run build:all
+      - run: npm install --prefix blocks/categories-section
+      - run: npm run build --prefix blocks/categories-section
       - name: Upload the artifact
         uses: actions/upload-artifact@v4
         with:
