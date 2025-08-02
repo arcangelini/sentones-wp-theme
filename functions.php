@@ -71,7 +71,7 @@ add_action( 'wp_enqueue_scripts', 'sent_ones_wp_styles' );
  * Register custom blocks
  */
 function sent_ones_wp_register_blocks() {
-	$blocks_dir = get_template_directory() . '/blocks/categories-section/build';
+	$blocks_dir = get_template_directory() . '/build';
 
 	if ( ! file_exists( $blocks_dir ) ) {
 		return;
