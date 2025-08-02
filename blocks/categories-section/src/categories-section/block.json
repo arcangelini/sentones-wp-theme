@@ -5,8 +5,8 @@
 	"version": "0.1.0",
 	"title": "Categories Section",
 	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
+	"icon": "category",
+	"description": "Display site categories.",
 	"example": {},
 	"supports": {
 		"html": false

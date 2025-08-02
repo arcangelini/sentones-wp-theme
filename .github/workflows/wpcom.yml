@@ -11,6 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: npm install
+      - run: npm run build:all
       - name: Upload the artifact
         uses: actions/upload-artifact@v4
         with:
@@ -18,3 +24,6 @@ jobs:
           path: |
             .
             !.git*
+            !node_modules
+            !package-lock.json
+            !package.json

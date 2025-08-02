@@ -137,3 +137,6 @@ dist
 
 # claude stuff
 .claude/
+
+# build files
+build/

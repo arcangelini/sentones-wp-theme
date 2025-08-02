@@ -1,0 +1,14 @@
+{
+	"name": "sent-ones-wp-theme",
+	"version": "1.0.0",
+	"description": "Custom WordPress block theme for WordPress.com sites",
+	"scripts": {
+		"build": "npm run build --prefix blocks/categories-section",
+		"start": "npm run start --prefix blocks/categories-section",
+		"build:all": "npm run build --prefix blocks/categories-section",
+		"start:all": "npm run start --prefix blocks/categories-section"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^30.20.0"
+	}
+}
