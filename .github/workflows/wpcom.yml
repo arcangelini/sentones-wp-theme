@@ -15,6 +15,7 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
+          cache-dependency-path: 'blocks/categories-section/package-lock.json'
       - run: npm install --prefix blocks/categories-section
       - run: npm run build --prefix blocks/categories-section
       - name: Upload the artifact
