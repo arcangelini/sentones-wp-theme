@@ -15,13 +15,13 @@ if ( ! function_exists( 'sent_ones_wp_setup' ) ) {
 	function sent_ones_wp_setup() {
 		// Add support for editor styles.
 		add_theme_support( 'editor-styles' );
-		
-		// Add support for font appearance tools
+
+		// Add support for font appearance tools.
 		add_theme_support( 'appearance-tools' );
-		
-		// Add support for custom units
+
+		// Add support for custom units.
 		add_theme_support( 'custom-units' );
-		
+
 		// Enqueue editor styles.
 		add_editor_style( 'style.css' );
 	}
@@ -45,7 +45,7 @@ function sent_ones_wp_styles() {
 		// Enqueue theme stylesheet.
 		wp_enqueue_style( 'sent-ones-wp-style' );
 
-		// Add inline styles for fonts to ensure they load on the front end
+		// Add inline styles for fonts to ensure they load on the front end.
 		$font_css = '
 		@font-face {
 			font-family: "Montserrat";
@@ -72,11 +72,11 @@ add_action( 'wp_enqueue_scripts', 'sent_ones_wp_styles' );
  */
 function sent_ones_wp_register_blocks() {
 	$blocks_dir = get_template_directory() . '/blocks/categories-section/build';
-	
+
 	if ( ! file_exists( $blocks_dir ) ) {
 		return;
 	}
-	
+
 	/**
 	 * Registers the block(s) metadata from the `blocks-manifest.php` and registers the block type(s)
 	 * based on the registered block metadata.
@@ -92,7 +92,7 @@ function sent_ones_wp_register_blocks() {
 	if ( function_exists( 'wp_register_block_metadata_collection' ) ) {
 		wp_register_block_metadata_collection( $blocks_dir, $blocks_dir . '/blocks-manifest.php' );
 	}
-	
+
 	/**
 	 * Registers the block type(s) in the `blocks-manifest.php` file.
 	 */

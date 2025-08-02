@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<ruleset name="Sent Ones WordPress Theme">
+	<description>Custom ruleset for Sent Ones WordPress theme</description>
+
+	<!-- Set the minimum PHP version -->
+	<config name="minimum_supported_wp_version" value="6.0"/>
+	<config name="testVersion" value="7.4-"/>
+	
+
+	<!-- Include WordPress coding standards -->
+	<rule ref="WordPress"/>
+
+	<!-- Check all PHP files in the theme -->
+	<file>.</file>
+
+	<!-- Exclude vendor directories and node_modules -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+	<exclude-pattern>*/.git/*</exclude-pattern>
+
+	<!-- Set text domain for theme -->
+	<rule ref="WordPress.WP.I18n">
+		<properties>
+			<property name="text_domain" type="array">
+				<element value="sent-ones-wp"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Verify that everything in the global namespace is prefixed -->
+	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+		<properties>
+			<property name="prefixes" type="array">
+				<element value="sent_ones_wp"/>
+			</property>
+		</properties>
+	</rule>
+
+	<!-- Allow relaxed rules for template files -->
+	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
+		<exclude-pattern>*/templates/*</exclude-pattern>
+		<exclude-pattern>*/parts/*</exclude-pattern>
+	</rule>
+</ruleset>
