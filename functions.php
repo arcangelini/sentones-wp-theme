@@ -110,3 +110,104 @@ add_action( 'init', 'sent_ones_wp_register_blocks' );
  * Add Podcasting post type
  */
 require_once get_template_directory() . '/podcasts.php';
+
+/**
+ * Register Categories Section block with server-side rendering
+ */
+function sent_ones_wp_register_categories_section_block() {
+	if ( function_exists( 'register_block_type' ) ) {
+		register_block_type(
+			get_template_directory() . '/blocks/categories-section/build',
+			array(
+				'render_callback' => 'sent_ones_wp_render_categories_section_block',
+			)
+		);
+	}
+}
+add_action( 'init', 'sent_ones_wp_register_categories_section_block' );
+
+/**
+ * Render callback for Categories Section block
+ *
+ * @param array $attributes Block attributes.
+ * @return string Block HTML output.
+ */
+function sent_ones_wp_render_categories_section_block( $attributes ) {
+	$selected_category = isset( $attributes['selectedCategory'] ) ? absint( $attributes['selectedCategory'] ) : 0;
+
+	ob_start();
+	?>
+	<div class="wp-block-create-block-categories-section categories-section">
+		<div class="category-dropdown">
+			<label for="category-select"><?php esc_html_e( 'Select Category:', 'sent-ones-wp' ); ?></label>
+			<select id="category-select" name="category-select" onchange="window.location.href='?' + new URLSearchParams(Object.assign(Object.fromEntries(new URLSearchParams(window.location.search)), {category: this.value})).toString()">
+				<option value=""><?php esc_html_e( 'All Categories', 'sent-ones-wp' ); ?></option>
+				<?php
+				$categories = get_categories( array( 'hide_empty' => true ) );
+				foreach ( $categories as $category ) {
+					$selected = ( $selected_category === $category->term_id ) ? 'selected' : '';
+					printf(
+						'<option value="%d" %s>%s</option>',
+						esc_attr( $category->term_id ),
+						esc_attr( $selected ),
+						esc_html( $category->name )
+					);
+				}
+				?>
+			</select>
+		</div>
+
+		<div class="posts-grid">
+			<?php
+			$args = array(
+				'posts_per_page' => 3,
+				'post_status'    => 'publish',
+			);
+
+			if ( $selected_category ) {
+				$args['cat'] = $selected_category;
+			}
+
+			$posts = get_posts( $args );
+
+			if ( $posts ) :
+				?>
+				<div class="posts-row">
+					<?php foreach ( $posts as $post ) : ?>
+						<div class="post-item">
+							<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+								<div class="post-image">
+									<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>">
+										<?php echo get_the_post_thumbnail( $post->ID, 'medium' ); ?>
+									</a>
+								</div>
+							<?php endif; ?>
+							<h3 class="post-title">
+								<a href="<?php echo esc_url( get_permalink( $post->ID ) ); ?>">
+									<?php echo esc_html( get_the_title( $post->ID ) ); ?>
+								</a>
+							</h3>
+							<div class="post-date">
+								<?php echo esc_html( get_the_date( '', $post->ID ) ); ?>
+							</div>
+						</div>
+					<?php endforeach; ?>
+				</div>
+				<?php
+			else :
+				?>
+				<div class="no-posts">
+					<?php
+					if ( $selected_category ) {
+						esc_html_e( 'No posts found in this category.', 'sent-ones-wp' );
+					} else {
+						esc_html_e( 'No posts found.', 'sent-ones-wp' );
+					}
+					?>
+				</div>
+			<?php endif; ?>
+		</div>
+	</div>
+	<?php
+	return ob_get_clean();
+}

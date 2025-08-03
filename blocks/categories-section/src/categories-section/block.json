@@ -6,14 +6,19 @@
 	"title": "Categories Section",
 	"category": "widgets",
 	"icon": "category",
-	"description": "Display site categories.",
+	"description": "Display recent posts from selected category with category dropdown.",
 	"example": {},
+	"attributes": {
+		"selectedCategory": {
+			"type": "number",
+			"default": ""
+		}
+	},
 	"supports": {
 		"html": false
 	},
-	"textdomain": "categories-section",
+	"textdomain": "sent-ones-wp",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
-	"viewScript": "file:./view.js"
+	"style": "file:./style-index.css"
 }
